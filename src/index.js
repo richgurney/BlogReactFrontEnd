@@ -19,7 +19,6 @@ ReactDOM.render(
         <Route path="/posts/new" component={PostsNew} />
         <Route path="/" component={PostsIndex} />
       </Switch>
-
     </div>
     </BrowserRouter>
   </Provider>

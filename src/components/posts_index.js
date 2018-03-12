@@ -12,9 +12,19 @@ class PostsIndex extends Component {
   renderPosts() {
     return _.map(this.props.posts, post => {
       return (
-        <li className="list-group-item" key={post.id}>
-          {post.title}
-        </li>
+        <div className="card">
+          <div className="card-header" key={post.id}>
+            {post.title}
+          </div>
+          <div className="card-body">
+            <div className="card-text" key={post.id}>
+              {post.body}
+            </div>
+            <div className="card-subtitle mb-2 text-muted" key={post.id}>
+              Author: {post.author}
+            </div>
+          </div>
+        </div>
       );
     });
   }
@@ -22,15 +32,13 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <div className="text-xs-right">
+        <div className="float-right">
           <Link className="btn btn-primary" to="/posts/new">
             Add a Post
           </Link>
         </div>
         <h3>Posts</h3>
-        <ul className="list-group">
-          {this.renderPosts()}
-        </ul>
+        {this.renderPosts()}
       </div>
     )
   }

@@ -14,15 +14,9 @@ class PostsIndex extends Component {
       return (
         <div className="card">
           <div className="card-header" key={post.id}>
-            {post.title}
-          </div>
-          <div className="card-body">
-            <div className="card-text" key={post.id}>
-              {post.body}
-            </div>
-            <div className="card-subtitle mb-2 text-muted" key={post.id}>
-              Author: {post.author}
-            </div>
+            <Link to={`/posts/${post._id}`}>
+              {post.title}
+            </Link>
           </div>
         </div>
       );

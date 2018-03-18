@@ -32,6 +32,7 @@ class PostsNew extends Component {
 
   render() {
     const { handleSubmit } = this.props;
+    const  { DOM: { input, select, textarea } } = React
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>

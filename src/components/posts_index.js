@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import { Link } from 'react-router-dom';
+import MarkdownRenderer from 'react-markdown-renderer';
 import _ from 'lodash';
 
 class PostsIndex extends Component {

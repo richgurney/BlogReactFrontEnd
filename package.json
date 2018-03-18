@@ -28,7 +28,10 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.1.18",
+    "dateformat": "^3.0.3",
+    "html-react-parser": "^0.4.2",
     "lodash": "^3.10.1",
+    "marked": "^0.3.17",
     "react": "^0.14.9",
     "react-dom": "^0.14.9",
     "react-markdown-renderer": "^1.4.0",
@@ -37,6 +40,7 @@
     "react-router-dom": "^4.0.0",
     "redux": "^3.0.4",
     "redux-form": "^6.6.3",
-    "redux-promise": "^0.5.3"
+    "redux-promise": "^0.5.3",
+    "snarky": "^0.1.0"
   }
 }

@@ -18,7 +18,7 @@ ReactDOM.render(
     <div>
       <Nav />
       <Switch>
-        <Route path="/posts/new" component={PostsNew} />
+        // <Route path="/posts/new" component={PostsNew} />
         <Route path="/posts/:id" component={PostsShow} />
         <Route path="/" component={PostsIndex} />
       </Switch>

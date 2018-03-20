@@ -1,14 +1,14 @@
 import { renderComponent , expect } from '../test_helper';
-import App from '../../src/components/app';
+import Posts from '../../src/index';
 
-describe('App' , () => {
+describe('Posts' , () => {
   let component;
 
   beforeEach(() => {
-    component = renderComponent(App);
+    component = renderComponent(Posts);
   });
 
   it('renders something', () => {
-    expect(component).to.exist;
+    expect(component);
   });
 });

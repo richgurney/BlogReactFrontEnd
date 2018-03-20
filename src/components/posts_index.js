@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import { Link } from 'react-router-dom';
 import MarkdownRenderer from 'react-markdown-renderer';
+import DateFormat from 'dateformat';
+
 import _ from 'lodash';
 
 class PostsIndex extends Component {
@@ -10,13 +12,45 @@ class PostsIndex extends Component {
     this.props.fetchPosts();
   }
 
+  formatStartDate(date) {
+    return DateFormat(date, "dddd - mmmm dS - yyyy, h:MM TT");
+  }
+
   renderPosts() {
+    const headerLink = {
+      fontSize: 60,
+      color: 'black',
+      fontWeight: 900,
+    }
+
+    const postsSection = {
+      position: 'relative',
+      top: '-40px',
+      borderRadius: '1px',
+      padding: '10px 20px',
+      backgroundColor: 'white',
+      marginBottom: '20px',
+    }
+
+    const readButton = {
+      backgroundColor: '#2D3142',
+      borderRadius: '10px',
+      color: '#ffffff',
+      padding: '5px 6px',
+      marginTop: '5px',
+    }
+
     return _.map(this.props.posts, post => {
       return (
-        <div className="card">
-          <div className="card-header" key={post.id}>
-            <Link to={`/posts/${post._id}`}>
+        <div style={ postsSection } >
+          <div key={post.id}>
+            <Link style={ headerLink } to={`/posts/${post._id}`}>
               {post.title}
+            </Link>
+            <h3>{post.author}</h3>
+            <h5>{this.formatStartDate(post.createdAt)}</h5>
+            <Link style={ readButton } to={`/posts/${post._id}`}>
+              Read
             </Link>
           </div>
         </div>
@@ -25,15 +59,31 @@ class PostsIndex extends Component {
   }
 
   render() {
+    const header = {
+      backgroundImage: 'url(https://photos.smugmug.com/OpsviewLondon/n-FK92Hk/i-QPJNRwK/0/aedce179/X4/i-QPJNRwK-X4.jpg)',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      height: 500,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingTop: '100px',
+    }
+
+    const sectionOne = {
+      backgroundColor: '#f0f1f3',
+      width: '100%',
+    }
+
     return (
       <div>
-        <div className="float-right">
-          <Link className="btn btn-primary" to="/posts/new">
-            Add a Post
-          </Link>
+        <div style={ header }>
         </div>
-        <h3>Posts</h3>
-        {this.renderPosts()}
+        <div style={ sectionOne }>
+          <div className="container" >
+            {this.renderPosts()}
+          </div>
+        </div>
       </div>
     )
   }

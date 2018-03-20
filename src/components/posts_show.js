@@ -35,13 +35,19 @@ class PostsShow extends Component {
   render() {
     const { post } = this.props;
 
+    const blogContainer = {
+      marginTop: 87,
+      padding: '30px 30px',
+    }
+
     if (!post) {
       return <div>Loading...</div>
     }
 
     return (
-      <div className="blogContainer">
-        <div className="blog-title">
+      <div style={ blogContainer }>
+        <Link to="/">Home</Link>
+        <div>
           <h1>{post.title}</h1>
         </div>
         <div className="blog-details">
@@ -60,13 +66,6 @@ class PostsShow extends Component {
             RG- <Link to="/">Back</Link>
           </div>
         </div>
-
-        <button
-          type="button"
-          className="btn btn-danger"
-          onClick={this.onDeleteClick.bind(this)}
-        > Delete
-        </button>
       </div>
     )
   }

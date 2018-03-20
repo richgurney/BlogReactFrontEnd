@@ -8,7 +8,7 @@ export default class Nav extends React.Component {
       padding: 10,
       height: 90,
       width: '100%',
-      backgroundColor: "#bfc0c0a1",
+      backgroundColor: "#bfc0c0e8",
       position: 'fixed',
       top: 0,
       color: 'white',

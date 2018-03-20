@@ -36,8 +36,9 @@ class PostsIndex extends Component {
       backgroundColor: '#2D3142',
       borderRadius: '10px',
       color: '#ffffff',
-      padding: '5px 6px',
+      padding: '7px 9px',
       marginTop: '5px',
+      display: 'inline-block'
     }
 
     return _.map(this.props.posts, post => {

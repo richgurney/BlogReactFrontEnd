@@ -65,7 +65,10 @@ class PostsShow extends Component {
           </div>
           <div className="card-subtitle mb-2 text-muted">
             RG- <Link to="/">Back</Link>
+          </div>
+          <div>
             <LikeButton />
+            <h5>Likes: {post.likes}</h5>
           </div>
         </div>
       </div>

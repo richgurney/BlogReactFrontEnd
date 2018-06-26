@@ -57,8 +57,6 @@ class PostsShow extends Component {
         <div className="blog-details">
           {this.formatStartDate(post.createdAt)}
         </div>
-
-
         <div className="card-body">
           <div className="card-text">
             {this.renderMarkdown(post.body)}
@@ -67,8 +65,8 @@ class PostsShow extends Component {
             RG- <Link to="/">Back</Link>
           </div>
           <div>
-            <LikeButton />
-            <h5>Likes: {post.likes}</h5>
+            <LikeButton id={post._id} />
+
           </div>
         </div>
       </div>

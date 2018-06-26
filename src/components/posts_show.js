@@ -5,6 +5,7 @@ import MarkdownRenderer from 'react-markdown-renderer';
 import Parser from 'html-react-parser';
 import { Link } from 'react-router-dom';
 import DateFormat from 'dateformat';
+import LikeButton from './like_button';
 
 class PostsShow extends Component {
 
@@ -64,6 +65,7 @@ class PostsShow extends Component {
           </div>
           <div className="card-subtitle mb-2 text-muted">
             RG- <Link to="/">Back</Link>
+            <LikeButton />
           </div>
         </div>
       </div>
